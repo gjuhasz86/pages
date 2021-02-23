@@ -801,13 +801,13 @@ var $p_Lexample_Main$__$anonfun$main$1__Lexample_TileMap__Lorg_scalajs_dom_raw_C
 var $p_Lexample_Main$__rndTile$1__Lexample_Tiles$Path = (function($thiz) {
   return new $c_Lexample_Tiles$Path((($m_s_util_Random$().nextInt__I__I((($m_Lexample_Tiles$Paths$().rawAll__sci_Vector().size__I() - 1) | 0)) + 1) | 0), 0).normalized__Lexample_Tiles$Path()
 });
-var $p_Lexample_Main$__$anonfun$main$4__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lorg_scalajs_dom_raw_MouseEvent__T2__V = (function($thiz, nextTile$1, tileMap$1, ctx$1, e$1, x0$1) {
+var $p_Lexample_Main$__$anonfun$main$3__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__I__T2__V = (function($thiz, nextTile$1, tileMap$1, ctx$1, x$3, y$1, x0$1) {
   var x1 = x0$1;
   if ((x1 !== null)) {
     var r = x1._1$mcI$sp__I();
     var c = x1._2$mcI$sp__I();
     $m_s_Predef$().println__O__V(new $c_T3(r, c, $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem)));
-    $m_Lexample_Main$().DrawOnTileMap__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lexample_Main$DrawOnTileMap(tileMap$1, ctx$1).drawTileXy__D__D__Lexample_Tile__V($uD(e$1.pageX), $uD(e$1.pageY), $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem));
+    $m_Lexample_Main$().DrawOnTileMap__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lexample_Main$DrawOnTileMap(tileMap$1, ctx$1).drawTileXy__D__D__Lexample_Tile__V(x$3, y$1, $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem));
     nextTile$1.sr_ObjectRef__f_elem = $p_Lexample_Main$__rndTile$1__Lexample_Tiles$Path($thiz);
     $m_Lexample_Main$().DrawOnTileMap__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lexample_Main$DrawOnTileMap(tileMap$1, ctx$1).drawTile__I__I__Lexample_Tile__V(1, (-2), $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem));
     $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem));
@@ -816,6 +816,14 @@ var $p_Lexample_Main$__$anonfun$main$4__sr_ObjectRef__Lexample_TileMap__Lorg_sca
   } else {
     throw new $c_s_MatchError(x1)
   }
+});
+var $p_Lexample_Main$__placeTile$1__I__I__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function($thiz, x, y, tileMap$1, nextTile$1, ctx$1) {
+  tileMap$1.screenToTile__I__I__s_Option(x, y).foreach__F1__V(new $c_sjsr_AnonFunction1((function(this\u00f8, nextTile$1, tileMap$1, ctx$1, x, y) {
+    return (function(x0$1$2) {
+      var x0$1 = $as_T2(x0$1$2);
+      $p_Lexample_Main$__$anonfun$main$3__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__I__I__T2__V(this\u00f8, nextTile$1, tileMap$1, ctx$1, x, y, x0$1)
+    })
+  })($thiz, nextTile$1, tileMap$1, ctx$1, x, y)))
 });
 /** @constructor */
 function $c_Lexample_Main$() {
@@ -848,32 +856,34 @@ $c_Lexample_Main$.prototype.main__Lorg_scalajs_dom_raw_HTMLCanvasElement__V = (f
   canvas.onmouseup = (function(tileMap$1, nextTile$1, ctx$1) {
     return (function(arg1$2) {
       var arg1 = arg1$2;
-      $m_Lexample_Main$().example$Main$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(arg1, tileMap$1, nextTile$1, ctx$1)
+      $m_Lexample_Main$().example$Main$$$anonfun$main$4__Lorg_scalajs_dom_raw_MouseEvent__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(arg1, tileMap$1, nextTile$1, ctx$1)
     })
   })(tileMap, nextTile, ctx);
-  canvas.onmousewheel = (function(nextTile$1, tileMap$1, ctx$1) {
+  canvas.addEventListener("contextmenu", (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lexample_Main$().example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_MouseEvent__V(arg1)
+  }));
+  canvas.addEventListener("wheel", (function(nextTile$1, tileMap$1, ctx$1) {
     return (function(arg1$2) {
       var arg1 = arg1$2;
-      $m_Lexample_Main$().example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(arg1, nextTile$1, tileMap$1, ctx$1)
+      $m_Lexample_Main$().example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(arg1, nextTile$1, tileMap$1, ctx$1)
     })
-  })(nextTile, tileMap, ctx);
-  canvas.onkeypress = (function(arg1$2) {
+  })(nextTile, tileMap, ctx));
+  $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.onkeypress = (function(arg1$2) {
     var arg1 = arg1$2;
-    $m_Lexample_Main$().example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_KeyboardEvent__V(arg1)
+    $m_Lexample_Main$().example$Main$$$anonfun$main$10__Lorg_scalajs_dom_raw_KeyboardEvent__V(arg1)
   })
 });
 $c_Lexample_Main$.prototype.DrawOnTileMap__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lexample_Main$DrawOnTileMap = (function(self, ctx) {
   return new $c_Lexample_Main$DrawOnTileMap(self, ctx)
 });
-$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$3__Lorg_scalajs_dom_raw_MouseEvent__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function(e, tileMap$1, nextTile$1, ctx$1) {
-  tileMap$1.screenToTile__I__I__s_Option($doubleToInt($uD(e.pageX)), $doubleToInt($uD(e.pageY))).foreach__F1__V(new $c_sjsr_AnonFunction1((function(this\u00f8, nextTile$1, tileMap$1, ctx$1, e) {
-    return (function(x0$1$2) {
-      var x0$1 = $as_T2(x0$1$2);
-      $p_Lexample_Main$__$anonfun$main$4__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lorg_scalajs_dom_raw_MouseEvent__T2__V(this\u00f8, nextTile$1, tileMap$1, ctx$1, e, x0$1)
-    })
-  })(this, nextTile$1, tileMap$1, ctx$1, e)))
+$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$4__Lorg_scalajs_dom_raw_MouseEvent__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function(e, tileMap$1, nextTile$1, ctx$1) {
+  $p_Lexample_Main$__placeTile$1__I__I__Lexample_TileMap__sr_ObjectRef__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(this, $doubleToInt($uD(e.pageX)), $doubleToInt($uD(e.pageY)), tileMap$1, nextTile$1, ctx$1)
 });
-$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function(e, nextTile$1, tileMap$1, ctx$1) {
+$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_MouseEvent__V = (function(e) {
+  e.preventDefault()
+});
+$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function(e, nextTile$1, tileMap$1, ctx$1) {
   $m_s_Predef$().println__O__V(new $c_T4($uI(e.deltaMode), $uD(e.deltaX), $uD(e.deltaY), $uD(e.deltaZ)));
   var qual$1 = $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem);
   var x$1 = (($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).rot__I() + $doubleToInt($uD(new $c_sr_RichDouble($m_s_Predef$().doubleWrapper__D__D($uD(e.deltaY))).sign__O()))) | 0);
@@ -884,7 +894,7 @@ $c_Lexample_Main$.prototype.example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_
   $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).paths__sci_Set());
   $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).points__sci_Set())
 });
-$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_KeyboardEvent__V = (function(e) {
+$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$10__Lorg_scalajs_dom_raw_KeyboardEvent__V = (function(e) {
   $m_s_Predef$().println__O__V($uI(e.charCode))
 });
 var $d_Lexample_Main$ = new $TypeData().initClass({
@@ -911,14 +921,14 @@ var $p_Lexample_Main$DrawOnTileMap__$anonfun$drawTileXy$1__Lexample_Tile__T2__V 
     throw new $c_s_MatchError(x1)
   }
 });
-var $p_Lexample_Main$DrawOnTileMap__$anonfun$drawTile$1__I__I__T2__V = (function($thiz, x$3, y$1, x0$1) {
+var $p_Lexample_Main$DrawOnTileMap__$anonfun$drawTile$1__I__I__T2__V = (function($thiz, x$4, y$2, x0$1) {
   var x1 = x0$1;
   if ((x1 !== null)) {
     var fx = x1._1$mcD$sp__D();
     var fy = x1._2$mcD$sp__D();
     $thiz.Lexample_Main$DrawOnTileMap__f_ctx.beginPath();
-    $thiz.Lexample_Main$DrawOnTileMap__f_ctx.moveTo(x$3, y$1);
-    $thiz.Lexample_Main$DrawOnTileMap__f_ctx.lineTo((x$3 + ($thiz.self__Lexample_TileMap().size__I() * fx)), (y$1 + ($thiz.self__Lexample_TileMap().distanceY__D() * fy)));
+    $thiz.Lexample_Main$DrawOnTileMap__f_ctx.moveTo(x$4, y$2);
+    $thiz.Lexample_Main$DrawOnTileMap__f_ctx.lineTo((x$4 + ($thiz.self__Lexample_TileMap().size__I() * fx)), (y$2 + ($thiz.self__Lexample_TileMap().distanceY__D() * fy)));
     $thiz.Lexample_Main$DrawOnTileMap__f_ctx.stroke()
   } else {
     throw new $c_s_MatchError(x1)
@@ -2158,6 +2168,13 @@ var $p_Lorg_scalajs_dom_package$__window$lzycompute__Lorg_scalajs_dom_raw_Window
   };
   return $thiz.Lorg_scalajs_dom_package$__f_window
 });
+var $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw_HTMLDocument = (function($thiz) {
+  if ((($thiz.Lorg_scalajs_dom_package$__f_bitmap$0 & 67108864) === 0)) {
+    $thiz.Lorg_scalajs_dom_package$__f_document = $thiz.window__Lorg_scalajs_dom_raw_Window().document;
+    $thiz.Lorg_scalajs_dom_package$__f_bitmap$0 = ($thiz.Lorg_scalajs_dom_package$__f_bitmap$0 | 67108864)
+  };
+  return $thiz.Lorg_scalajs_dom_package$__f_document
+});
 /** @constructor */
 function $c_Lorg_scalajs_dom_package$() {
   this.Lorg_scalajs_dom_package$__f_ApplicationCache = null;
@@ -2201,6 +2218,9 @@ function $h_Lorg_scalajs_dom_package$() {
 $h_Lorg_scalajs_dom_package$.prototype = $c_Lorg_scalajs_dom_package$.prototype;
 $c_Lorg_scalajs_dom_package$.prototype.window__Lorg_scalajs_dom_raw_Window = (function() {
   return (((this.Lorg_scalajs_dom_package$__f_bitmap$0 & 33554432) === 0) ? $p_Lorg_scalajs_dom_package$__window$lzycompute__Lorg_scalajs_dom_raw_Window(this) : this.Lorg_scalajs_dom_package$__f_window)
+});
+$c_Lorg_scalajs_dom_package$.prototype.document__Lorg_scalajs_dom_raw_HTMLDocument = (function() {
+  return (((this.Lorg_scalajs_dom_package$__f_bitmap$0 & 67108864) === 0) ? $p_Lorg_scalajs_dom_package$__document$lzycompute__Lorg_scalajs_dom_raw_HTMLDocument(this) : this.Lorg_scalajs_dom_package$__f_document)
 });
 var $d_Lorg_scalajs_dom_package$ = new $TypeData().initClass({
   Lorg_scalajs_dom_package$: 0
