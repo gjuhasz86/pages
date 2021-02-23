@@ -856,7 +856,11 @@ $c_Lexample_Main$.prototype.main__Lorg_scalajs_dom_raw_HTMLCanvasElement__V = (f
       var arg1 = arg1$2;
       $m_Lexample_Main$().example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V(arg1, nextTile$1, tileMap$1, ctx$1)
     })
-  })(nextTile, tileMap, ctx)
+  })(nextTile, tileMap, ctx);
+  canvas.onkeypress = (function(arg1$2) {
+    var arg1 = arg1$2;
+    $m_Lexample_Main$().example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_KeyboardEvent__V(arg1)
+  })
 });
 $c_Lexample_Main$.prototype.DrawOnTileMap__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__Lexample_Main$DrawOnTileMap = (function(self, ctx) {
   return new $c_Lexample_Main$DrawOnTileMap(self, ctx)
@@ -870,6 +874,7 @@ $c_Lexample_Main$.prototype.example$Main$$$anonfun$main$3__Lorg_scalajs_dom_raw_
   })(this, nextTile$1, tileMap$1, ctx$1, e)))
 });
 $c_Lexample_Main$.prototype.example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_WheelEvent__sr_ObjectRef__Lexample_TileMap__Lorg_scalajs_dom_raw_CanvasRenderingContext2D__V = (function(e, nextTile$1, tileMap$1, ctx$1) {
+  $m_s_Predef$().println__O__V(new $c_T4($uI(e.deltaMode), $uD(e.deltaX), $uD(e.deltaY), $uD(e.deltaZ)));
   var qual$1 = $as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem);
   var x$1 = (($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).rot__I() + $doubleToInt($uD(new $c_sr_RichDouble($m_s_Predef$().doubleWrapper__D__D($uD(e.deltaY))).sign__O()))) | 0);
   var x$2 = qual$1.copy$default$1__I();
@@ -878,6 +883,9 @@ $c_Lexample_Main$.prototype.example$Main$$$anonfun$main$6__Lorg_scalajs_dom_raw_
   $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem));
   $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).paths__sci_Set());
   $m_s_Predef$().println__O__V($as_Lexample_Tiles$Path(nextTile$1.sr_ObjectRef__f_elem).points__sci_Set())
+});
+$c_Lexample_Main$.prototype.example$Main$$$anonfun$main$8__Lorg_scalajs_dom_raw_KeyboardEvent__V = (function(e) {
+  $m_s_Predef$().println__O__V($uI(e.charCode))
 });
 var $d_Lexample_Main$ = new $TypeData().initClass({
   Lexample_Main$: 0
@@ -6758,6 +6766,36 @@ function $f_s_Product3__productElement__I__O($thiz, n) {
 function $f_s_Product3__$init$__V($thiz) {
   /*<skip>*/
 }
+function $f_s_Product4__productArity__I($thiz) {
+  return 4
+}
+function $f_s_Product4__productElement__I__O($thiz, n) {
+  var x1 = n;
+  switch (x1) {
+    case 0: {
+      return $thiz._1__O();
+      break
+    }
+    case 1: {
+      return $thiz._2__O();
+      break
+    }
+    case 2: {
+      return $thiz._3__O();
+      break
+    }
+    case 3: {
+      return $thiz._4__O();
+      break
+    }
+    default: {
+      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), (("" + n) + " is out of bounds (min 0, max 3)"))
+    }
+  }
+}
+function $f_s_Product4__$init$__V($thiz) {
+  /*<skip>*/
+}
 var $ct_sc_IterableFactory$Delegate__sc_IterableFactory__ = (function($thiz, delegate) {
   $thiz.sc_IterableFactory$Delegate__f_delegate = delegate;
   $ct_O__($thiz);
@@ -10500,6 +10538,90 @@ var $d_T3 = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_T3.prototype.$classData = $d_T3;
+/** @constructor */
+function $c_T4(_1, _2, _3, _4) {
+  this.T4__f__1 = null;
+  this.T4__f__2 = null;
+  this.T4__f__3 = null;
+  this.T4__f__4 = null;
+  this.T4__f__1 = _1;
+  this.T4__f__2 = _2;
+  this.T4__f__3 = _3;
+  this.T4__f__4 = _4;
+  $ct_O__(this);
+  $f_s_Product__$init$__V(this);
+  $f_s_Product4__$init$__V(this)
+}
+$c_T4.prototype = new $h_O();
+$c_T4.prototype.constructor = $c_T4;
+/** @constructor */
+function $h_T4() {
+  /*<skip>*/
+}
+$h_T4.prototype = $c_T4.prototype;
+$c_T4.prototype.productArity__I = (function() {
+  return $f_s_Product4__productArity__I(this)
+});
+$c_T4.prototype.productElement__I__O = (function(n) {
+  return $f_s_Product4__productElement__I__O(this, n)
+});
+$c_T4.prototype._1__O = (function() {
+  return this.T4__f__1
+});
+$c_T4.prototype._2__O = (function() {
+  return this.T4__f__2
+});
+$c_T4.prototype._3__O = (function() {
+  return this.T4__f__3
+});
+$c_T4.prototype._4__O = (function() {
+  return this.T4__f__4
+});
+$c_T4.prototype.toString__T = (function() {
+  return (((((((("(" + this._1__O()) + ",") + this._2__O()) + ",") + this._3__O()) + ",") + this._4__O()) + ")")
+});
+$c_T4.prototype.productPrefix__T = (function() {
+  return "Tuple4"
+});
+$c_T4.prototype.productIterator__sc_Iterator = (function() {
+  return $m_sr_ScalaRunTime$().typedProductIterator__s_Product__sc_Iterator(this)
+});
+$c_T4.prototype.hashCode__I = (function() {
+  return $m_sr_ScalaRunTime$()._hashCode__s_Product__I(this)
+});
+$c_T4.prototype.equals__O__Z = (function(x$1) {
+  if ($is(this, x$1)) {
+    return true
+  } else {
+    var x1 = x$1;
+    if (((x1 instanceof $c_T4) || false)) {
+      var Tuple4$1 = $as_T4(x$1);
+      return ((($m_sr_BoxesRunTime$().equals__O__O__Z(this._1__O(), Tuple4$1._1__O()) && $m_sr_BoxesRunTime$().equals__O__O__Z(this._2__O(), Tuple4$1._2__O())) && $m_sr_BoxesRunTime$().equals__O__O__Z(this._3__O(), Tuple4$1._3__O())) && $m_sr_BoxesRunTime$().equals__O__O__Z(this._4__O(), Tuple4$1._4__O()))
+    } else {
+      return false
+    }
+  }
+});
+function $as_T4(obj) {
+  return (((obj instanceof $c_T4) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.Tuple4"))
+}
+function $isArrayOf_T4(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.T4)))
+}
+function $asArrayOf_T4(obj, depth) {
+  return (($isArrayOf_T4(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.Tuple4;", depth))
+}
+var $d_T4 = new $TypeData().initClass({
+  T4: 0
+}, false, "scala.Tuple4", {
+  T4: 1,
+  O: 1,
+  s_Product4: 1,
+  s_Product: 1,
+  s_Equals: 1,
+  Ljava_io_Serializable: 1
+});
+$c_T4.prototype.$classData = $d_T4;
 function $f_sc_IndexedSeqOps__iterator__sc_Iterator($thiz) {
   return $thiz.view__sc_IndexedSeqView().iterator__sc_Iterator()
 }
